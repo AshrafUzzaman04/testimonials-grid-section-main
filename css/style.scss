@@ -1,8 +1,13 @@
+// google fonts imported link here
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+// main and default coding here
 body {
   min-height: 100vh;
   justify-content: center;
@@ -10,21 +15,68 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #ecf2f8;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 13px;
   > main {
-    max-width: 1400px;
+    max-width: 1300px;
+    margin: 0 20px 20px;
     > .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas: "place1 place1 place2 place3" "place4 place5 place5 place3";
-      grid-gap: 30px;
+      grid-gap: 22px;
       margin: auto;
       > div {
         border-radius: 10px;
         padding: 2.5rem 3rem;
+        cursor: pointer;
+        box-shadow: hsl(217deg 30% 14% / 10%) 0.5rem 1.5rem 2.5rem 0;
+        > :nth-child(1) {
+          display: flex;
+          > img {
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            border: 2px solid hsla(0deg, 0%, 100%, 0.5);
+            display: inline;
+            margin-right: 16px;
+          }
+          > div {
+            display: inline-grid;
+            > .span1 {
+              font-weight: 600;
+              font-size: 16px;
+            }
+            > .span2 {
+              opacity: 70%;
+              font-size: 12px;
+              font-weight: 300;
+            }
+          }
+        }
+        > :nth-child(2) {
+          > h2 {
+            font-weight: 700;
+            padding: 16px 0;
+          }
+          > p {
+            opacity: 55%;
+            line-height: 19px;
+          }
+        }
       }
       > .grid_purple {
         background-color: #733fc8;
         grid-area: place1;
+        background-image: url(/images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right 15%;
+        > .card-img {
+          > img {
+            border: 2px solid hsla(0deg, 0%, 100%, 0.5);
+          }
+        }
       }
       > .grid_gray {
         background-color: #49556b;
@@ -33,10 +85,32 @@ body {
       > .grid_white {
         background-color: white;
         grid-area: place3;
+        color: #474e58;
+        > :nth-child(2) {
+          > h2 {
+            font-weight: 600;
+            padding: 24px 0;
+          }
+          > p {
+            opacity: 80%;
+            line-height: 20px;
+          }
+        }
       }
       > .grid_again_white {
         background-color: white;
         grid-area: place4;
+        color: #474e58;
+        > :nth-child(2) {
+          > h2 {
+            font-weight: 600;
+            padding: 20px 0;
+          }
+          > p {
+            opacity: 80%;
+            line-height: 20px;
+          }
+        }
       }
       > .grid_black {
         background-color: #18202d;
@@ -44,17 +118,160 @@ body {
       }
     }
   }
+  > footer {
+    text-align: cetner;
+    color: #49556b;
+    font-size: 20px;
+    font-weight: 500;
+    > a {
+      color: #733fc8;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
 }
 
-// @media only screen and (min-width: 1400px) {
-// }
-// @media only screen and (min-width: 1200px) {
-// }
-// @media only screen and (min-width: 992px) {
-// }
-// @media only screen and (min-width: 768px) {
-// }
-// @media only screen and (min-width: 576px) {
-// }
-// @media only screen and (max-width: 575px) {
-// }
+// tab and mobile media query style sheet >>>>>
+@media only screen and (max-width: 1000px) {
+  body {
+    > main {
+      margin: 20px 20px;
+      > .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "place1" " place2" "place3" "place5" "place4";
+        grid-gap: 22px;
+        margin: auto;
+        > div {
+          padding: 30px 30px;
+          border-radius: 10px;
+          > :nth-child(1) {
+            display: flex;
+            > div {
+              display: inline-grid;
+              > .span1 {
+                font-weight: 500;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        > .grid_purple {
+          background-position: top right 10%;
+        }
+        > .grid_white {
+          background-color: white;
+          grid-area: place3;
+          color: #474e58;
+          > :nth-child(2) {
+            > h2 {
+              font-weight: 600;
+              padding: 14px 0;
+            }
+            > p {
+              opacity: 80%;
+              line-height: 20px;
+            }
+          }
+        }
+        > .grid_again_white {
+          background-color: white;
+          grid-area: place4;
+          color: #474e58;
+          > :nth-child(2) {
+            > h2 {
+              font-weight: 600;
+              padding: 10px 0;
+            }
+            > p {
+              opacity: 80%;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+    > footer {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// medium width laptop or monitor media query style sheet here >>>>
+@media only screen and (min-width: 1000px) and (max-width: 1400px) {
+  body {
+    > main {
+      max-width: 1200px;
+      margin: 20px 20px;
+      > .grid {
+        > div {
+          border-radius: 10px;
+          padding: 30px 36px;
+          > :nth-child(1) {
+            display: flex;
+            > img {
+              height: 34px;
+              width: 34px;
+              border-radius: 50%;
+              border: 2px solid hsla(0deg, 0%, 100%, 0.5);
+              display: inline;
+              margin-right: 14px;
+            }
+            > div {
+              display: inline-grid;
+              > .span1 {
+                font-weight: 600;
+                font-size: 14px;
+              }
+              > .span2 {
+                opacity: 70%;
+                font-size: 10px;
+                font-weight: 300;
+              }
+            }
+          }
+          > :nth-child(2) {
+            > h2 {
+              font-weight: 600;
+              padding: 14px 0;
+            }
+            > p {
+              opacity: 55%;
+              line-height: 19px;
+            }
+          }
+        }
+        > .grid_white {
+          background-color: white;
+          grid-area: place3;
+          color: #474e58;
+          > :nth-child(2) {
+            > h2 {
+              font-weight: 700;
+              padding: 16px 0;
+            }
+            > p {
+              opacity: 80%;
+              line-height: 20px;
+            }
+          }
+        }
+        > .grid_again_white {
+          background-color: white;
+          grid-area: place4;
+          color: #474e58;
+          > :nth-child(2) {
+            > h2 {
+              font-weight: 700;
+              padding: 16px 0;
+            }
+            > p {
+              opacity: 80%;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
